@@ -1,5 +1,9 @@
 # CakePHP学習用Dockerパッケージ  
 
+## 注意
+.envファイルはアップロードしていません。  
+別途管理者より取得するか、自作する必要あり。
+
 ## 主な参考  
 https://peblo.gs/cakephp-env-with-docker/  
 https://mag.nioufuku.net/2020/06/06/programming/00056-cakephp-docker-env/  
