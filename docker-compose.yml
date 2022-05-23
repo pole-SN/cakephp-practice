@@ -1,0 +1,77 @@
+version: "3.9"
+volumes:
+    db-store:
+services:
+    nginx:
+        container_name: nginx_container
+        image: nginx:1.21.6-alpine
+        ports:
+            - 8000:80
+        volumes:
+            - ./src:/var/www
+            - ./docker/nginx/app_nginx.conf:/etc/nginx/conf.d/app_nginx.conf
+        depends_on:
+            - cake
+            - mysql
+        networks:
+            - frontend
+
+    cake:
+        container_name: cake_container
+        build: ./docker/php
+        ports:
+            - 9000:9000
+        volumes:
+            - ./src:/var/www
+        depends_on:
+            - mysql
+        networks:
+            - frontend
+            - backend
+
+    mysql:
+        container_name: mysql_container
+        image: mysql:8.0.26
+        platform: "linux/amd64"
+        volumes:
+            - ./docker/mysql/conf.d:/etc/mysql/conf.d
+            - db-store:/var/lib/mysql
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_DATABASE: mysql
+            MYSQL_USER: user
+            MYSQL_PASSWORD: secret
+            MYSQL_ROOT_PASSWORD: secret
+            TZ: "Asia/Tokyo"
+        networks:
+            - backend
+
+    pma:
+        container_name: pma_container
+        image: phpmyadmin/phpmyadmin
+        environment:
+            - PMA_ARBITRARY=1
+            - PMA_HOST=mysql
+        ports:
+            - 1234:80
+        volumes:
+            - /sessions
+        networks:
+            - backend
+
+networks:
+    frontend:
+        name: frontend_nw
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 192.168.10.0/24
+    backend:
+        name: backend_nw
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 192.168.20.0/24
