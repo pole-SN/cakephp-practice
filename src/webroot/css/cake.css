@@ -71,12 +71,51 @@ th {
     white-space: nowrap;
 }
 
+/* Row */
+.row {
+    margin: 0;
+    padding: 2rem;
+    width: 100%;
+}
+
+.row-single{
+    justify-content: center;
+}
+
+tr {
+    position: relative;
+}
+
+.table-data-row:hover {
+    background: rgb(255, 240, 240);
+}
+
+.rowlink {
+    width: 0;
+    min-width: 0;
+    padding: 0;
+}
+
+.rowlink a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+/* Column */
+.column {
+    max-width: 20% !important;
+}
+
 /* Nav bar */
 .top-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 112rem;
+    max-width: 100%;
     padding: 2rem;
     margin: 0 auto 2rem;
 }

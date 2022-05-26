@@ -50,7 +50,7 @@ return static function (RouteBuilder $routes) {
          * its action called 'display', and we pass a param to select the view file
          * to use (in this case, templates/Pages/home.php)...
          */
-        $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+        $builder->connect('/', ['controller' => 'Histories', 'action' => 'index']);
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
@@ -70,6 +70,11 @@ return static function (RouteBuilder $routes) {
          * You can remove these routes once you've connected the
          * routes you want in your application.
          */
+        $builder->fallbacks();
+    });
+
+    $routes->prefix('admin', function (RouteBuilder $builder) {
+        $builder->connect('/', ['controller' => 'Histories', 'action' => 'index']);
         $builder->fallbacks();
     });
 
