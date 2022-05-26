@@ -38,6 +38,40 @@ bin/cake migrations migrate
 初期（サンプル）データ投入
 bin/cake migrations seed
 ```
+
+### ログイン
+```
+http://localhost:8030
+上記にログインするとログイン画面へリダイレクトされます。
+
+ログインユーザーについてはseedで以下を登録済み。
+email:
+root@root.com
+
+password:
+admin
+```
+
+### パス、ポートなど
+```
+localhost:8030
+nginx(port:8030)経由でcakePHP(port:9000)にアクセス
+Webアプリが表示されます。
+
+localhost:8031
+mysqlのコンテナ
+外向きに8031番ポートは空いてないので、ブラウザで入力しても何も表示されません。
+
+localhost:8032
+phpmyadminのコンテナ。
+myadmin用の初期ID、パスワードが設定されているため、
+アクセスするだけでphpmyadminが表示されます。(.envファイル必須)
+
+localhost:9000
+cakePHPのコンテナ。
+外向きに9000番ポートは空いてないので、ブラウザで入力しても何も表示されません。
+```
+
 ## メモ
 ## bakeなど
 ```
