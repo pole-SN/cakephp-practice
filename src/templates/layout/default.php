@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -18,6 +19,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,18 +37,28 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
+
 <body>
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
+            <a href="<?= $this->Url->build('/') ?>"><span>営業</span>管理</a>
         </div>
         <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
+            <a href="/users/logout">ログアウト</a>
         </div>
     </nav>
     <main class="main">
-        <div class="container">
+        <div class="row">
+            <aside class="column">
+                <div class="side-nav">
+                    <h4 class="heading"><?= __('Menu') ?></h4>
+                    <a class="side-nav-item" href="<?= $this->Url->build('/histories') ?>">取引履歴</a>
+                    <a class="side-nav-item" href="<?= $this->Url->build('/projects') ?>">プロジェクト</a>
+                    <a class="side-nav-item" href="<?= $this->Url->build('/clients') ?>">クライアント</a>
+                    <a class="side-nav-item" href="<?= $this->Url->build('/corporations') ?>">企業情報</a>
+                    <a class="side-nav-item" href="<?= $this->Url->build('/users') ?>">ユーザー情報</a>
+                </div>
+            </aside>
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
         </div>
@@ -54,4 +66,5 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <footer>
     </footer>
 </body>
+
 </html>

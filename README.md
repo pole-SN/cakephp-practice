@@ -27,6 +27,30 @@ docker-compose up -d
 docker-compose down
 ```
 
+## DB初期設定
+```
+DBコンテナのシェルに入る
+docker-compose exec cake sh
+
+DB構築
+bin/cake migrations migrate
+
+初期（サンプル）データ投入
+bin/cake migrations seed
+```
+
+## DB設定メモ
+```
+マイグレーションファイルの作成（Xxxxsは任意の内容に書き換える）
+bin/cake bake migration CreateXxxxs
+
+シードファイルの作成（Xxxxsは任意の内容に書き換える）
+bin/cake bake seed Xxxxs
+
+モデルの生成
+bin/cake bake model Xxxxs
+```
+
 ## その他  
 ```
 # シェル
