@@ -12,7 +12,7 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('cp_id') ?></th>
+                    <th><?= $this->Paginator->sort('sales_id') ?></th>
                     <th><?= $this->Paginator->sort('user_id') ?></th>
                     <th><?= $this->Paginator->sort('action') ?></th>
                     <th><?= $this->Paginator->sort('response') ?></th>
@@ -26,7 +26,7 @@
                 <?php foreach ($histories as $history): ?>
                 <tr>
                     <td><?= $this->Number->format($history->id) ?></td>
-                    <td><?= $history->has('clients_project') ? $this->Html->link($history->clients_project->id, ['controller' => 'ClientsProjects', 'action' => 'view', $history->clients_project->id]) : '' ?></td>
+                    <td><?= $history->has('sales') ? $this->Html->link($history->sales->id, ['controller' => 'Sales', 'action' => 'view', $history->sales->id]) : '' ?></td>
                     <td><?= $history->has('user') ? $this->Html->link($history->user->id, ['controller' => 'Users', 'action' => 'view', $history->user->id]) : '' ?></td>
                     <td><?= h($history->action) ?></td>
                     <td><?= h($history->response) ?></td>

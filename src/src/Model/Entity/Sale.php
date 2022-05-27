@@ -6,18 +6,20 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * ClientsProject Entity
+ * Sale Entity
  *
  * @property int $id
  * @property int $client_id
  * @property int $project_id
+ * @property int $quote
+ * @property int $profit
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
  * @property \App\Model\Entity\Client $client
  * @property \App\Model\Entity\Project $project
  */
-class ClientsProject extends Entity
+class Sale extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -31,6 +33,8 @@ class ClientsProject extends Entity
     protected $_accessible = [
         'client_id' => true,
         'project_id' => true,
+        'quote' => true,
+        'profit' => true,
         'created' => true,
         'modified' => true,
         'client' => true,

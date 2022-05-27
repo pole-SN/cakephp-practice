@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Histories Model
  *
- * @property \App\Model\Table\ClientsProjectsTable&\Cake\ORM\Association\BelongsTo $ClientsProjects
+ * @property \App\Model\Table\SalesTable&\Cake\ORM\Association\BelongsTo $Sales
  * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\SalesStatusTable&\Cake\ORM\Association\BelongsTo $SalesStatus
  *
@@ -49,8 +49,8 @@ class HistoriesTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('ClientsProjects', [
-            'foreignKey' => 'cp_id',
+        $this->belongsTo('Sales', [
+            'foreignKey' => 'sales_id',
             'joinType' => 'INNER',
         ]);
         $this->belongsTo('Users', [
@@ -72,9 +72,9 @@ class HistoriesTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->integer('cp_id')
-            ->requirePresence('cp_id', 'create')
-            ->notEmptyString('cp_id');
+            ->integer('sales_id')
+            ->requirePresence('sales_id', 'create')
+            ->notEmptyString('sales_id');
 
         $validator
             ->integer('user_id')
@@ -110,7 +110,7 @@ class HistoriesTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->existsIn('cp_id', 'ClientsProjects'), ['errorField' => 'cp_id']);
+        $rules->add($rules->existsIn('sales_id', 'Sales'), ['errorField' => 'sales_id']);
         $rules->add($rules->existsIn('user_id', 'Users'), ['errorField' => 'user_id']);
         $rules->add($rules->existsIn('status_id', 'SalesStatus'), ['errorField' => 'status_id']);
 

@@ -23,7 +23,7 @@ class HistoriesControllerTest extends TestCase
      */
     protected $fixtures = [
         'app.Histories',
-        'app.ClientsProjects',
+        'app.Sales',
         'app.Users',
     ];
 

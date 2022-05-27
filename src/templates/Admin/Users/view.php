@@ -54,7 +54,7 @@
                         <?php foreach ($user->histories as $histories) : ?>
                         <tr>
                             <td><?= h($histories->id) ?></td>
-                            <td><?= h($histories->cp_id) ?></td>
+                            <td><?= h($histories->sales_id) ?></td>
                             <td><?= h($histories->user_id) ?></td>
                             <td><?= h($histories->action) ?></td>
                             <td><?= h($histories->response) ?></td>

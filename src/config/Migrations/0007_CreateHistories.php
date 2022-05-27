@@ -16,7 +16,7 @@ class CreateHistories extends AbstractMigration
     {
         $table = $this->table('histories');
         $table
-            ->addColumn('cp_id', 'integer', [
+            ->addColumn('sales_id', 'integer', [
                 'null' => false
             ])
             ->addColumn('user_id', 'integer', [
@@ -33,7 +33,7 @@ class CreateHistories extends AbstractMigration
             ->addColumn('status_id', 'integer', [
                 'null' => false
             ])
-            ->addForeignKey('cp_id', 'clients_projects', 'id', [
+            ->addForeignKey('sales_id', 'sales', 'id', [
                 'delete'=> 'NO_ACTION',
                 'update'=> 'NO_ACTION',
             ])

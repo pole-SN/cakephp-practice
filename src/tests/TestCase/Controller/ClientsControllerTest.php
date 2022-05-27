@@ -25,7 +25,7 @@ class ClientsControllerTest extends TestCase
         'app.Clients',
         'app.Corporations',
         'app.Projects',
-        'app.ClientsProjects',
+        'app.Sales',
     ];
 
     /**

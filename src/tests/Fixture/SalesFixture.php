@@ -22,8 +22,10 @@ class SalesFixture extends TestFixture
                 'id' => 1,
                 'client_id' => 1,
                 'project_id' => 1,
-                'created' => '2022-05-26 04:40:04',
-                'modified' => '2022-05-26 04:40:04',
+                'quote' => 1,
+                'profit' => 1,
+                'created' => '2022-05-27 01:35:15',
+                'modified' => '2022-05-27 01:35:15',
             ],
         ];
         parent::init();

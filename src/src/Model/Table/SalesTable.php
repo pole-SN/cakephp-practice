@@ -9,28 +9,28 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * ClientsProjects Model
+ * Sales Model
  *
  * @property \App\Model\Table\ClientsTable&\Cake\ORM\Association\BelongsTo $Clients
  * @property \App\Model\Table\ProjectsTable&\Cake\ORM\Association\BelongsTo $Projects
  *
- * @method \App\Model\Entity\ClientsProject newEmptyEntity()
- * @method \App\Model\Entity\ClientsProject newEntity(array $data, array $options = [])
- * @method \App\Model\Entity\ClientsProject[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\ClientsProject get($primaryKey, $options = [])
- * @method \App\Model\Entity\ClientsProject findOrCreate($search, ?callable $callback = null, $options = [])
- * @method \App\Model\Entity\ClientsProject patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\ClientsProject[] patchEntities(iterable $entities, array $data, array $options = [])
- * @method \App\Model\Entity\ClientsProject|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\ClientsProject saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\ClientsProject[]|\Cake\Datasource\ResultSetInterface|false saveMany(iterable $entities, $options = [])
- * @method \App\Model\Entity\ClientsProject[]|\Cake\Datasource\ResultSetInterface saveManyOrFail(iterable $entities, $options = [])
- * @method \App\Model\Entity\ClientsProject[]|\Cake\Datasource\ResultSetInterface|false deleteMany(iterable $entities, $options = [])
- * @method \App\Model\Entity\ClientsProject[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
+ * @method \App\Model\Entity\Sale newEmptyEntity()
+ * @method \App\Model\Entity\Sale newEntity(array $data, array $options = [])
+ * @method \App\Model\Entity\Sale[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Sale get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Sale findOrCreate($search, ?callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Sale patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Sale[] patchEntities(iterable $entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Sale|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Sale saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Sale[]|\Cake\Datasource\ResultSetInterface|false saveMany(iterable $entities, $options = [])
+ * @method \App\Model\Entity\Sale[]|\Cake\Datasource\ResultSetInterface saveManyOrFail(iterable $entities, $options = [])
+ * @method \App\Model\Entity\Sale[]|\Cake\Datasource\ResultSetInterface|false deleteMany(iterable $entities, $options = [])
+ * @method \App\Model\Entity\Sale[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class ClientsProjectsTable extends Table
+class SalesTable extends Table
 {
     /**
      * Initialize method
@@ -42,7 +42,7 @@ class ClientsProjectsTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('clients_projects');
+        $this->setTable('sales');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
@@ -75,6 +75,12 @@ class ClientsProjectsTable extends Table
             ->integer('project_id')
             ->requirePresence('project_id', 'create')
             ->notEmptyString('project_id');
+
+        $validator
+            ->notEmptyString('quote');
+
+        $validator
+            ->notEmptyString('profit');
 
         return $validator;
     }

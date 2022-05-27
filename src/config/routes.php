@@ -50,7 +50,7 @@ return static function (RouteBuilder $routes) {
          * its action called 'display', and we pass a param to select the view file
          * to use (in this case, templates/Pages/home.php)...
          */
-        $builder->connect('/', ['controller' => 'Histories', 'action' => 'index']);
+        $builder->connect('/', ['controller' => 'Sales', 'action' => 'index']);
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
@@ -74,7 +74,7 @@ return static function (RouteBuilder $routes) {
     });
 
     $routes->prefix('admin', function (RouteBuilder $builder) {
-        $builder->connect('/', ['controller' => 'Histories', 'action' => 'index']);
+        $builder->connect('/', ['controller' => 'Sales', 'action' => 'index']);
         $builder->fallbacks();
     });
 

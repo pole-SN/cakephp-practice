@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Migrations\AbstractMigration;
 
-class CreateClientsProjects extends AbstractMigration
+class CreateSales extends AbstractMigration
 {
     /**
      * Change Method.
@@ -15,12 +15,20 @@ class CreateClientsProjects extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('clients_projects');
+        $table = $this->table('sales');
         $table
             ->addColumn('client_id', 'integer', [
                 'null' => false
             ])
             ->addColumn('project_id', 'integer', [
+                'null' => false
+            ])
+            ->addColumn('quote', 'biginteger', [
+                'default' => 0,
+                'null' => false
+            ])
+            ->addColumn('profit', 'biginteger', [
+                'default' => 0,
                 'null' => false
             ])
             ->addForeignKey('client_id', 'clients', 'id', [
