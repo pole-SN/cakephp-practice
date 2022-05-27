@@ -28,6 +28,7 @@ class SalesController extends AppController
         // select boxによる抽出の実施と結果のset
         $this->paginate = [
             'contain' => ['Clients', 'Projects'],
+            'limit' => 10,
         ];
         $query = $this->Sales->find('all');
         if ($clientId != null) {

@@ -7,9 +7,6 @@
 ?>
 <div class="column-responsive column-80">
     <div class="sales index content">
-        <div class="float-right">
-            売上合計額：<?= $this->Number->currency($totalProfit, 'JPY') ?>
-        </div>
         <h3><?= __('売上管理') ?></h3>
         <?= $this->Form->create($sales, [
             'type' => 'get',
@@ -31,6 +28,9 @@
             </div>
             <?= $this->Form->submit('抽出') ?>
             <?= $this->Form->end() ?>
+        </div>
+        <div class="float-right">
+            売上合計額：<?= $this->Number->currency($totalProfit, 'JPY') ?>
         </div>
         <div class="table-responsive">
             <table>
