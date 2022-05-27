@@ -2,7 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\History $history
- * @var string[]|\Cake\Collection\CollectionInterface $clientsProjects
+ * @var string[]|\Cake\Collection\CollectionInterface $sales
  * @var string[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
@@ -24,7 +24,7 @@
             <fieldset>
                 <legend><?= __('Edit History') ?></legend>
                 <?php
-                    echo $this->Form->control('cp_id', ['options' => $clientsProjects]);
+                    echo $this->Form->control('sales_id', ['options' => $sales]);
                     echo $this->Form->control('user_id', ['options' => $users]);
                     echo $this->Form->control('action');
                     echo $this->Form->control('response');

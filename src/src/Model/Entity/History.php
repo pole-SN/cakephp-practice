@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * History Entity
  *
  * @property int $id
- * @property int $cp_id
+ * @property int $sales_id
  * @property int $user_id
  * @property string $action
  * @property string $response
@@ -17,7 +17,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
- * @property \App\Model\Entity\ClientsProject $clients_project
+ * @property \App\Model\Entity\Sale $sales
  * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\SalesStatus $sales_status
  */
@@ -33,14 +33,14 @@ class History extends Entity
      * @var array<string, bool>
      */
     protected $_accessible = [
-        'cp_id' => true,
+        'sales_id' => true,
         'user_id' => true,
         'action' => true,
         'response' => true,
         'status_id' => true,
         'created' => true,
         'modified' => true,
-        'clients_project' => true,
+        'sales' => true,
         'user' => true,
         'sales_status' => true,
     ];

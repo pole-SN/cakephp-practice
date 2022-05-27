@@ -52,11 +52,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <aside class="column">
                 <div class="side-nav">
                     <h4 class="heading"><?= __('Menu') ?></h4>
-                    <a class="side-nav-item" href="<?= $this->Url->build('/histories') ?>">取引履歴</a>
+                    <a class="side-nav-item" href="<?= $this->Url->build('/sales') ?>">売上管理</a>
+                    <a class="side-nav-item" href="<?= $this->Url->build('/histories') ?>">行動履歴</a>
                     <a class="side-nav-item" href="<?= $this->Url->build('/projects') ?>">プロジェクト</a>
                     <a class="side-nav-item" href="<?= $this->Url->build('/clients') ?>">クライアント</a>
-                    <a class="side-nav-item" href="<?= $this->Url->build('/corporations') ?>">企業情報</a>
-                    <a class="side-nav-item" href="<?= $this->Url->build('/users') ?>">ユーザー情報</a>
+                    <a class="side-nav-item" href="<?= $this->Url->build('/corporations') ?>">取引先企業</a>
+                    <a class="side-nav-item" href="<?= $this->Url->build('/users') ?>">ユーザー</a>
                 </div>
             </aside>
             <?= $this->Flash->render() ?>

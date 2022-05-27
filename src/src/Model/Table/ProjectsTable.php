@@ -50,7 +50,7 @@ class ProjectsTable extends Table
         $this->belongsToMany('Clients', [
             'foreignKey' => 'project_id',
             'targetForeignKey' => 'client_id',
-            'joinTable' => 'clients_projects',
+            'joinTable' => 'salse',
         ]);
     }
 

@@ -20,7 +20,7 @@ class HistoriesFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'cp_id' => 1,
+                'sales_id' => 1,
                 'user_id' => 1,
                 'action' => 'Lorem ipsum dolor sit amet',
                 'response' => 'Lorem ipsum dolor sit amet',

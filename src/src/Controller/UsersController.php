@@ -34,7 +34,7 @@ class UsersController extends AppController
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['Histories' => ['ClientsProjects' => ['Clients' => ['Corporations'], 'Projects']]],
+            'contain' => ['Histories' => ['Sales' => ['Clients' => ['Corporations'], 'Projects']]],
         ]);
 
         $this->set(compact('user'));

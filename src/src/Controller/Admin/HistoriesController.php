@@ -21,7 +21,7 @@ class HistoriesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['ClientsProjects', 'Users'],
+            'contain' => ['Sales', 'Users'],
         ];
         $histories = $this->paginate($this->Histories);
 
@@ -38,7 +38,7 @@ class HistoriesController extends AppController
     public function view($id = null)
     {
         $history = $this->Histories->get($id, [
-            'contain' => ['ClientsProjects', 'Users'],
+            'contain' => ['Sales', 'Users'],
         ]);
 
         $this->set(compact('history'));
@@ -61,9 +61,9 @@ class HistoriesController extends AppController
             }
             $this->Flash->error(__('The history could not be saved. Please, try again.'));
         }
-        $clientsProjects = $this->Histories->ClientsProjects->find('list', ['limit' => 200])->all();
+        $sales = $this->Histories->Sales->find('list', ['limit' => 200])->all();
         $users = $this->Histories->Users->find('list', ['limit' => 200])->all();
-        $this->set(compact('history', 'clientsProjects', 'users'));
+        $this->set(compact('history', 'sales', 'users'));
     }
 
     /**
@@ -87,9 +87,9 @@ class HistoriesController extends AppController
             }
             $this->Flash->error(__('The history could not be saved. Please, try again.'));
         }
-        $clientsProjects = $this->Histories->ClientsProjects->find('list', ['limit' => 200])->all();
+        $sales = $this->Histories->Sales->find('list', ['limit' => 200])->all();
         $users = $this->Histories->Users->find('list', ['limit' => 200])->all();
-        $this->set(compact('history', 'clientsProjects', 'users'));
+        $this->set(compact('history', 'sales', 'users'));
     }
 
     /**

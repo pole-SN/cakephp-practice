@@ -38,13 +38,13 @@
                                 <td><?= h($histories->status) ?></td>
                                 <td>
                                     <div>
-                                        <?= h($histories->clients_project->client->corporation->name) ?>
+                                        <?= h($histories->sales->client->corporation->name) ?>
                                     </div>
                                     <div>
-                                        <?= h($histories->clients_project->client->sei) ?> <?= h($histories->clients_project->client->mei) ?> 様
+                                        <?= h($histories->sales->client->sei) ?> <?= h($histories->sales->client->mei) ?> 様
                                     </div>
                                 </td>
-                                <td><?= h($histories->clients_project->project->project_name) ?></td>
+                                <td><?= h($histories->sales->project->project_name) ?></td>
                                 <td><?= h($histories->action) ?></td>
                             </tr>
                         <?php endforeach; ?>

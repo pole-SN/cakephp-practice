@@ -20,7 +20,7 @@
             <table>
                 <tr>
                     <th><?= __('Clients Project') ?></th>
-                    <td><?= $history->has('clients_project') ? $this->Html->link($history->clients_project->id, ['controller' => 'ClientsProjects', 'action' => 'view', $history->clients_project->id]) : '' ?></td>
+                    <td><?= $history->has('sales') ? $this->Html->link($history->sales->id, ['controller' => 'Sales', 'action' => 'view', $history->sales->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('User') ?></th>

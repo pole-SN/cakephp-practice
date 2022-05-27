@@ -8,7 +8,7 @@
 <div class="column-responsive column-80">
     <div class="histories index content">
         <!-- <?= $this->Html->link(__('New History'), ['action' => 'add'], ['class' => 'button float-right']) ?> -->
-        <h3><?= __('取引履歴') ?></h3>
+        <h3><?= __('行動履歴') ?></h3>
         <div class="table-responsive">
             <table id="table">
                 <thead>
@@ -26,8 +26,8 @@
                         <tr class="table-data-row">
                             <td class="rowlink"><a href="/histories/view/<?= $history->id ?>"></a></td>
                             <td><?= $history->has('user') ? $this->Html->link($history->user->username, ['controller' => 'Users', 'action' => 'view', $history->user->id]) : '' ?></td>
-                            <td><?= $this->Html->link($history->clients_project->client->sei . " " . $history->clients_project->client->mei . " 様", ['controller' => 'Clients', 'action' => 'view', $history->clients_project->client->id]) ?></td>
-                            <td><?= $this->Html->link($history->clients_project->project->project_name, ['controller' => 'Projects', 'action' => 'view', $history->clients_project->project->id]) ?></td>
+                            <td><?= $this->Html->link($history->sale->client->sei . " " . $history->sale->client->mei . " 様", ['controller' => 'Clients', 'action' => 'view', $history->sale->client->id]) ?></td>
+                            <td><?= $this->Html->link($history->sale->project->project_name, ['controller' => 'Projects', 'action' => 'view', $history->sale->project->id]) ?></td>
                             <td><?= $this->Html->link($history->sales_status->state_str, ['controller' => 'Projects', 'action' => 'view', $history->status_id]) ?></td>
                             <td><?= h($history->action) ?></td>
                         </tr>

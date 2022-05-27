@@ -3,16 +3,16 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\ProjectsController;
+use App\Controller\SalesController;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Controller\ProjectsController Test Case
+ * App\Controller\SalesController Test Case
  *
- * @uses \App\Controller\ProjectsController
+ * @uses \App\Controller\SalesController
  */
-class ProjectsControllerTest extends TestCase
+class SalesControllerTest extends TestCase
 {
     use IntegrationTestTrait;
 
@@ -22,16 +22,16 @@ class ProjectsControllerTest extends TestCase
      * @var array<string>
      */
     protected $fixtures = [
-        'app.Projects',
-        'app.Clients',
         'app.Sales',
+        'app.Clients',
+        'app.Projects',
     ];
 
     /**
      * Test index method
      *
      * @return void
-     * @uses \App\Controller\ProjectsController::index()
+     * @uses \App\Controller\SalesController::index()
      */
     public function testIndex(): void
     {
@@ -42,7 +42,7 @@ class ProjectsControllerTest extends TestCase
      * Test view method
      *
      * @return void
-     * @uses \App\Controller\ProjectsController::view()
+     * @uses \App\Controller\SalesController::view()
      */
     public function testView(): void
     {
@@ -53,7 +53,7 @@ class ProjectsControllerTest extends TestCase
      * Test add method
      *
      * @return void
-     * @uses \App\Controller\ProjectsController::add()
+     * @uses \App\Controller\SalesController::add()
      */
     public function testAdd(): void
     {
@@ -64,7 +64,7 @@ class ProjectsControllerTest extends TestCase
      * Test edit method
      *
      * @return void
-     * @uses \App\Controller\ProjectsController::edit()
+     * @uses \App\Controller\SalesController::edit()
      */
     public function testEdit(): void
     {
@@ -75,7 +75,7 @@ class ProjectsControllerTest extends TestCase
      * Test delete method
      *
      * @return void
-     * @uses \App\Controller\ProjectsController::delete()
+     * @uses \App\Controller\SalesController::delete()
      */
     public function testDelete(): void
     {
