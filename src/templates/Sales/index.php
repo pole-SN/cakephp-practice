@@ -18,12 +18,20 @@
                 'action' => 'index'
             ]
         ]) ?>
-        <label>クライアント：</label>
-        <?= $this->Form->select('client', $clients, ['empty' => 'クライアント指定なし', 'value' => $clientId]) ?>
-        <label>プロジェクト：</label>
-        <?= $this->Form->select('project', $projects, ['empty' => 'プロジェクト指定なし', 'value' => $projectId]) ?>
-        <?= $this->Form->submit('抽出') ?>
-        <?= $this->Form->end() ?>
+
+        <div class="extract-form">
+            <label>検索・抽出</label>
+            <div>
+                <div>
+                    <?= $this->Form->select('client', $clients, ['empty' => 'クライアント指定なし', 'value' => $clientId]) ?>
+                </div>
+                <div>
+                    <?= $this->Form->select('project', $projects, ['empty' => 'プロジェクト指定なし', 'value' => $projectId]) ?>
+                </div>
+            </div>
+            <?= $this->Form->submit('抽出') ?>
+            <?= $this->Form->end() ?>
+        </div>
         <div class="table-responsive">
             <table>
                 <thead>
