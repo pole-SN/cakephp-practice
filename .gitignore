@@ -1,4 +1,4 @@
 .DS_Store
-.env
-*/.env
+# .env
+# */.env
 *mysql_data/
