@@ -17,20 +17,18 @@ docker-compose build
 docker-compose build --no-cache
 ```
 
-### 起動  
+### コンテナ起動  
 ```
 docker-compose up -d
 ```
 
-### 停止  
-```
-docker-compose down
-```
-
-### DB初期設定
+### データ初期設定
 ```
 DBコンテナのシェルに入る
 docker-compose exec cake sh
+
+composerをインストール ※初回のみ
+composer install
 
 DB構築
 bin/cake migrations migrate
@@ -89,6 +87,11 @@ bin/cake bake controller Xxxxs
 
 Viewテンプレートの生成
 bin/cake bake template Xxxxs
+```
+
+### コンテナ停止  
+```
+docker-compose down
 ```
 
 ### その他
