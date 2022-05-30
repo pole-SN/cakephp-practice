@@ -41,7 +41,7 @@ class SalesController extends AppController
         $this->set(compact('sales'));
 
         // 合計金額をset
-        $totalProfit = $this->getTotal($this->Sales->find('all'));
+        $totalProfit = $this->getTotal($query);
         $this->set(compact('totalProfit'));
 
         // 抽出用select boxの表示名用set

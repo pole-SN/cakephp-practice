@@ -1,8 +1,5 @@
 # CakePHP学習用Dockerパッケージ  
 
-## 注意
-.envファイルはアップロードしていません。  
-
 ## 主な参考  
 https://peblo.gs/cakephp-env-with-docker/  
 https://mag.nioufuku.net/2020/06/06/programming/00056-cakephp-docker-env/  
@@ -101,3 +98,5 @@ docker-sompose exec {コンテナ名} sh
 # MySQL接続確認
 docker-compose exec mysql bash -c 'mysql -u${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE}'
 ```
+envファイルなどは本来Gitに配置するべきではありませんが、  
+便宜上今回のプロジェクトでは他ファイルと同様にアップロード済みとなります。
